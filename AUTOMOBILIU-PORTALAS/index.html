@@ -4,55 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Automobiliu projektas</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <link href="./styles.css" rel="stylesheet" />
+    <script src="./script.js" defer></script>
   </head>
   <body>
     <div class="container">
-      <form action="" id="card-form">
+      <form id="carForm">
         <input
+          id="name"
           type="text"
-          name="Automobilio pavadinimas"
-          id="description"
           placeholder="Automobilio pavadinimas"
           required
         />
         <input
-          type="text"
-          name="trumpas aprasymas"
           id="description"
-          placeholder="trumpas aprasymas"
-          required
-        />
-        <input
           type="text"
-          name="kaina"
-          id="description"
-          placeholder="kaina"
+          placeholder="Trumpas aprasymas"
           required
         />
-        <input
-          type="text"
-          name="nuotrauka"
-          id="image"
-          placeholder="Nuoroda i automobilio nuotrauka"
-          required
-        />
-        <input
-          type="text"
-          name="kaina"
-          id="description"
-          placeholder="Benzinas"
-          required
-        />
-        <select name="" id="fuel" required>
-          >
-          <option value="Benzinas"></option>
-          <option value="Dyzelinas"></option>
-          <option value="Elektromobilis"></option>
-          <button id="submit">Prideti</button>
+        <input id="price" type="number" placeholder="Kaina" required />
+        <input id="image" type="text" placeholder="Nuotraukos URL" required />
+        <input type="text" name="" id="year" placeholder="Metai" required />
+
+        <select id="fuel">
+          <option value="Benzinas">Benzinas</option>
+          <option value="Dyzelinas">Dyzelinas</option>
+          <option value="Elektra">Elektra</option>
+          <option value="Hibridas">Hibridas</option>
         </select>
+
+        <button type="submit">Prideti</button>
       </form>
+
+      <div id="cars"></div>
     </div>
   </body>
 </html>

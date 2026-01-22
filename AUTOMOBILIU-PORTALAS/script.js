@@ -1,21 +1,35 @@
 const carForm = document.getElementById("carForm");
-const carDiv = document.getElementById("div");
+const carsDiv = document.getElementById("cars");
 
 carForm.addEventListener("submit", function (event) {
+  // Sustabdys standartine formos elgsena, nepekraus puslapio
   event.preventDefault();
+
+  // paimu info is formos kai ji paspaudziama
   const name = document.getElementById("name").value;
   const description = document.getElementById("description").value;
   const price = document.getElementById("price").value;
   const image = document.getElementById("image").value;
   const fuel = document.getElementById("fuel").value;
+  const year = document.getElementById("year").value;
+
+  // sukuriu automobilio kortele
   const carCard = document.createElement("div");
-  carCard.classList.add("car-card");
+  carCard.className = "car-card";
+
+  // pripildau kortele informacija
   carCard.innerHTML = `
-    <h3>${name}</h3>
-    <p>${description}</p>
-    <p>Price: $${price}</p>
-    <p>Fuel Type: ${fuel}</p>
-    <img src="${image}" alt="${name}" width="200"/>
+  <img src=${image} alt="car">
+  <h3>${name}</h3>
+  <p>${description}</p>
+  <p>Automobilio kaina: ${price}</p>
+  <p>Automobilio kuras: ${fuel}</p>
+    <p>Automobilio metai: ${year}</p>
   `;
-  carList.appendChild(carCard);
+
+  // pridedu kortele i HTML'a
+  carsDiv.appendChild(carCard);
+
+  // Atsatyk forma i pradine padeti
+  carForm.reset();
 });
